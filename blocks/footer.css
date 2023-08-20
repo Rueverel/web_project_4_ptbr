@@ -1,0 +1,39 @@
+.footer {
+  display: flex;
+  padding-top: 68px;
+  padding-bottom: 60px;
+  padding-left: 200px;
+}
+
+.footer_text {
+color: #545454;
+font-family: 'Inter';
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+@media (min-width: 768px)  and (max-width: 1279px) {
+
+.footer {
+  padding-left: 100px;
+}
+
+}
+
+@media (min-width: 320px)  and (max-width: 767px) { 
+
+.footer {
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 19px;
+
+}
+
+.footer_text {
+  font-size: 14px;
+}
+
+}

@@ -1,0 +1,94 @@
+.elements {
+  width: 880px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin:auto;
+  /* padding-left: 200px;
+  padding-right: 200px; */
+  padding-top: 42px;
+  gap:20px 17px;
+}
+
+.element {
+  width:282px;
+  height: 361px;
+  display: flex;
+  flex-direction: column;
+  /* border-radius: 50%; */
+  /* row-gap: 17px;
+  column-gap: 20px; */
+}
+
+.element_picture {
+  width: 282px;
+  border-radius: 15px 15px 0% 0%;
+}
+
+.element_info {
+  /* display: flex;
+  width: 282px; */
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  /* flex-direction: row; */
+  justify-content: center;
+  /* border-radius: 5% 5% 0% 0%; */
+}
+
+.element_text {
+  color: #000;
+  font-family: 'Inter';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 31px;
+  padding-left: 21px;
+  border-radius: 0% 0% 0% 15px;
+  /* border: none; */
+}
+
+.like_button {
+  /* background-image: white; */
+  background-color: white;
+  border: none;
+  padding-right: 18px;
+  border-radius: 0% 0% 15px 0%;
+}
+
+.like_button_style {
+  background-color: white;
+  z-index: 1;
+}
+
+@media (min-width: 768px)  and (max-width: 1279px) {
+
+.elements {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  /* padding-left: 95px;
+  padding-right: 95px; */
+  padding-top: 42px;
+  gap:20px 20px;
+}
+
+}
+
+@media (min-width: 320px)  and (max-width: 767px) { 
+
+.elements {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6fr;
+  /* padding-left: 19px;
+  padding-right: 19px; */
+  padding-top: 36px;
+  gap:20px;
+  }
+
+}

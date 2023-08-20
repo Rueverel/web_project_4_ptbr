@@ -1,0 +1,148 @@
+.profile {
+  display: flex;
+  align-items: center;
+  margin:auto;
+  /* padding-left: 177.5px;
+  padding-right: 200px; */
+  padding-top: 40px;
+}
+
+.avatar {
+  margin-left: 177.5px;
+  border-radius: 50%;
+  width: 169px;
+}
+
+.profile_info {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  padding-left: 26px;
+}
+
+.profile_noum {
+  width: 373px;
+  color: #FFF;
+  font-family: 'Inter';
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.profile_hobbie {
+  color: #FFF;
+  font-family: 'Inter';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 16px;
+}
+
+.edit_button{
+  padding-left: 18px;
+  border: none;
+}
+
+.add_button {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  margin-left: 130px;
+  border: solid 2px #FFF;
+ }
+
+.add_button_text {
+  font-size: 40px;
+  color: #FFF;
+}
+
+@media (min-width: 768px)  and (max-width: 1279px) {
+
+.profile {
+  width: 718px;
+  margin:auto;
+  /* padding-left: 50px;
+  padding-right: 0px; */
+}
+
+.avatar {
+  margin: auto;
+}
+
+.add_button {
+  width: 100px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+
+}
+ 
+@media (min-width: 320px)  and (max-width: 767px) { 
+
+.profile {
+  width: 282px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin:auto;
+  /* padding-left: 19px;
+  padding-right: 19px; */
+  padding-top: 38.25px;
+}
+
+.avatar {
+  margin:auto;
+}
+
+.profile_info {
+  display: grid;
+  /* width: 196px; */
+  grid-template-columns: 6fr 1fr;
+  padding-top: 26.25px;
+  padding-left: 29px; 
+}
+
+.profile_noum {
+  width: 196px;
+  text-align: center;
+  font-family: 'Inter';
+  font-size: 22px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.profile_hobbie {
+  color: #FFF;
+  text-align: center;
+  font-family: 'Inter';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 14px;
+ 
+}
+
+.edit_button{
+  padding-left: 10px;
+  border: none;
+}
+
+.add_button {
+  width: 282px;
+  /* justify-content: center; */
+  padding-left: 0px;
+  margin-top:36px;
+  margin-left: 0px;
+  /* color: #FFF; */
+ }
+
+ .add_button_text {
+  font-size: 30px;
+  margin: auto;
+ }
+
+}
