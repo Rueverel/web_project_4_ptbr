@@ -1,12 +1,12 @@
 .popup {
   display: none;
-  /* position:fixed; */
-  /* align-items: center;
-  justify-content: center;  alinha as coisas?? */
+  position:fixed;
   flex-direction: column;
   width: 430px;
   height: auto;
-  margin: auto;
+  margin-top: 195px;
+  margin-left: 35%;
+  /* margin: 425px auto 425px auto; */
   background-color: white;
   z-index: 1;
   border-radius: 15px;
@@ -17,10 +17,11 @@
 }
 
 .button_close {
-  position: relative;
+  position: absolute;
   width: 40px;
-  margin-top: -70px;
-  right: -415px;
+  top: -70px;
+  left: 420px;
+  /*right: -415px; */
   color:white;
   font-family: 'Inter';
   font-size: 90px;
@@ -31,7 +32,8 @@
 }
 
 .button_close:hover {
-  color:gray
+  color:gray;
+  cursor: pointer;
 }
 
 .popup__container{
@@ -45,6 +47,7 @@
 
 .popup_title{
   width: auto;
+  padding-top: 34px;
   padding-bottom: 54px;
   background-color: white;
   color: #000;
@@ -65,7 +68,7 @@
   font-weight: 400;
   line-height: normal;
   border-bottom: 1px;
-  border-color: #545454;
+  border-color: gray;
   border-bottom-style: solid;
 }
 
@@ -80,7 +83,7 @@
   font-weight: 400;
   line-height: normal;
   border-bottom: 1px;
-  border-color: #545454;
+  border-color: gray;
   border-bottom-style: solid;
 
 }
@@ -107,19 +110,31 @@
   background-color:gray;
 }
 
+@media (min-width: 501px)  and (max-width: 850px) {
+
+.popup {
+  margin-left:25%;
+}
+
+}
+
 @media (min-width: 320px)  and (max-width: 500px) { 
 
 .popup {
   width: 282px;
+  height: fit-content;
+  margin-top: 123px;
+  margin-left: 19px;
 }
 
 .button_close {
   width: 26px;
-  margin-top: -3,62px;
+  top: -65px;
+  left: 247px;
   right: 0px;
   color:white;
   font-family: 'Inter';
-  font-size: 40px;
+  font-size: 60px;
   font-style: normal;
   font-weight: 200;
 }
@@ -129,12 +144,14 @@
 }
 
 .popup_title{
+  padding-top: 25px;
+  padding-bottom: 76px;
   color: #000;
-font-family: 'Inter';
-font-size: 18px;
-font-style: normal;
-font-weight: 900;
-line-height: normal;
+  font-family: 'Inter';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
 }
 
 .popup_name{
@@ -151,7 +168,6 @@ line-height: normal;
 .popup_aboutme {
   width: 238px;
   padding-top: 30px;
-  padding-bottom: 9px;
   color: #000;
   font-family: 'Inter';
   font-size: 14px;
@@ -168,6 +184,5 @@ line-height: normal;
   padding-bottom: 14px;
 
 }
-
 
 }

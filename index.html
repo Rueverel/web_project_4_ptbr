@@ -7,23 +7,34 @@
   <title>Projeto 5 - Ao redor dos EUA</title>
 </head>
 <body>
-  <header class="header">
-    <img class="header_logo" src="/images/header/header_logo.png" alt="logo of website">
-  </header>
-  <div class="profile">
-    <img class="avatar" src="/images/profile/avatar.jpg" alt="Avatar of User">
-    <div class="profile_info">
-      <h2 class="profile_noum">Jacques Cousteau</h2>
-      <button onclick="abrirModal()" class="edit_button">
-        <img src="/images/buttons/edit_button.png" alt="edit button">
+  <div class="popup">
+    <button onclick="fecharModal()" class="button_close">+</button>
+    <div class="popup__container">
+      <h2 class="popup_title">Editar Perfil</h2>
+      <form class="popup_name">Jacques Cousteau</form>
+      <form class="popup_aboutme">Explorar</form>
+      <button class="button_save">Salvar
+        <!-- <h3 class="button_save_text">Salvar</h3> -->
       </button>
-      <h3 class="profile_hobbie">Explorar</h3>
-      
     </div>
-    <button class="add_button">+
-    </button>
   </div>
-  <div class="elements">
+  <div class="fade">
+    <header class="header">
+    <img class="header_logo" src="/images/header/header_logo.png" alt="logo of website">
+    </header>
+    <div class="profile">
+      <img class="avatar" src="/images/profile/avatar.jpg" alt="Avatar of User">
+      <div class="profile_info">
+        <h2 class="profile_noum">Jacques Cousteau</h2>
+        <button onclick="abrirModal()" class="edit_button">
+          <img src="/images/buttons/edit_button.png" alt="edit button">
+        </button>
+        <h3 class="profile_hobbie">Explorar</h3>
+      </div>
+      <button class="add_button">+
+      </button>
+    </div>
+    <div class="elements">
     <div class="element">
       <img class="element_picture" src="/images/elements/Yosemite.jpg" alt="Yosemite Valley">
       <div class="element_info">
@@ -72,21 +83,10 @@
         </button>
       </div>
     </div>
-  </div>
-  <footer class="footer">
-    <h2 class="footer_text">© 2021 Around The U.S.</h2>
-  </footer>
-  <div class="popup">
-    <button onclick="fecharModal()" class="button_close">+</button>
-    <div class="popup__container">
-      <h2 class="popup_title">Editar Perfil</h2>
-      <form class="popup_name">Jacques Cousteau</form>
-      <form class="popup_aboutme">Explorar</form>
-      <button class="button_save">Salvar
-        <!-- <h3 class="button_save_text">Salvar</h3> -->
-      </button>
-      
     </div>
+    <footer class="footer">
+    <h2 class="footer_text">© 2021 Around The U.S.</h2>
+    </footer>
   </div>
   <script src="/pages/index.js"></script>
 </body>

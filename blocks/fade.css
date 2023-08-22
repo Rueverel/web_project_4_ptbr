@@ -1,0 +1,10 @@
+.fade {
+  opacity: 1;
+}
+
+.fade_on {
+  opacity: 0.5;
+  background: #000;
+  /* opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5); */
+}
