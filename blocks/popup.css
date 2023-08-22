@@ -1,6 +1,8 @@
 .popup {
   display: none;
-  position:fixed;
+  /* position:fixed; */
+  /* align-items: center;
+  justify-content: center;  alinha as coisas?? */
   flex-direction: column;
   width: 430px;
   height: auto;
@@ -26,6 +28,10 @@
   font-weight: 200;
   border:none;
   transform: rotate(-45deg);
+}
+
+.button_close:hover {
+  color:gray
 }
 
 .popup__container{
@@ -85,6 +91,8 @@
   margin-bottom: 36.51px;
   padding-top: 13.66px;
   padding-bottom: 18.49px;
+  border-color: #000;
+  border: none;
   border-radius: 2px;
   color: #FFF;
   text-align: center;
@@ -93,6 +101,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.button_save:hover{
+  background-color:gray;
 }
 
 @media (min-width: 320px)  and (max-width: 500px) { 
@@ -141,11 +153,11 @@ line-height: normal;
   padding-top: 30px;
   padding-bottom: 9px;
   color: #000;
-font-family: 'Inter';
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  font-family: 'Inter';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .button_save { 
