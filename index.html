@@ -7,17 +7,16 @@
   <title>Projeto 5 - Ao redor dos EUA</title>
 </head>
 <body>
-  <div class="popup">
-    <button onclick="fecharModal()" class="button_close">+</button>
+  <form class="popup">
+    <button class="button_close">+</button>
     <div class="popup__container">
       <h2 class="popup_title">Editar Perfil</h2>
-      <form class="popup_name">Jacques Cousteau</form>
-      <form class="popup_aboutme">Explorar</form>
-      <button class="button_save">Salvar
-        <!-- <h3 class="button_save_text">Salvar</h3> -->
+      <input class="popup_name" type="text" id="idname" name="idname" value="Jacques Cousteau">
+      <input class="popup_aboutme" id="idabout" name="idabout" type="text" value="Explorar">
+      <button class="button_save" type="submit">Salvar
       </button>
     </div>
-  </div>
+  </form>
   <div class="fade">
     <header class="header">
     <img class="header_logo" src="/images/header/header_logo.png" alt="logo of website">
@@ -26,7 +25,7 @@
       <img class="avatar" src="/images/profile/avatar.jpg" alt="Avatar of User">
       <div class="profile_info">
         <h2 class="profile_noum">Jacques Cousteau</h2>
-        <button onclick="abrirModal()" class="edit_button">
+        <button class="edit_button">
           <img src="/images/buttons/edit_button.png" alt="edit button">
         </button>
         <h3 class="profile_hobbie">Explorar</h3>
