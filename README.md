@@ -1,16 +1,13 @@
 # Projeto 5:  EUA Afora
 
-### Visão geral
+### Este projeto tem como propósito consolidar todos os conhecimentos aprendidos da Sprint 4 do curso Desenvolvedor Web da Tripleten, entre eles a responividade e o uso do JavaScript.
 
-* Figma
-* Imagens
+## Tecnologias Usadas:
 
-**Figma**
+- ### HTML no body do projeto;
 
-* [Link para o projeto no Figma](https://www.figma.com/file/XfB6BSINvliub43JgKza1e/WEB.-Sprint-4.-Around-The-U.S.-desktop-%2B-mobile-pt)
+- ### CSS para estilização do mesmo;
 
-**Imagens**
+- ### JS para o popup de formulário;
 
-A maneira como você fará isso no trabalho é exportando imagens diretamente do Figma — recomendamos fazer isso para praticar mais. Não se esqueça de otimizá-los [aqui](https://tinypng.com/), para que seu projeto carregue mais rápido.
-
-Divirta-se com JavaScript!
+* [Link para o projeto no navegador](https://github.com/Rueverel/web_project_4_ptbr)

@@ -16,7 +16,7 @@
   display: flex;
 }
 
-.button_close {
+.button__close {
   position: absolute;
   width: 40px;
   top: -70px;
@@ -29,9 +29,10 @@
   font-weight: 200;
   border:none;
   transform: rotate(-45deg);
+  background-color: black;
 }
 
-.button_close:hover {
+.button__close:hover {
   color:gray;
   cursor: pointer;
 }
@@ -45,7 +46,7 @@
   margin: auto;
 }
 
-.popup_title{
+.popup__title{
   width: auto;
   padding-top: 34px;
   padding-bottom: 54px;
@@ -58,7 +59,7 @@
   line-height: normal;
   }
 
-.popup_name{
+.popup__name{
   width: 358px;
   background-color: white;
   color: #000;
@@ -73,7 +74,7 @@
   border-bottom-style: solid;
 }
 
-.popup_aboutme {
+.popup__aboutme {
   width: 358px;
   padding-top: 43px;
   background-color: white;
@@ -90,7 +91,7 @@
 
 }
   
-.button_save { 
+.button__save { 
   width: 358px;
   margin-top: 61.34px;
   margin-bottom: 36.51px;
@@ -105,9 +106,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  background-color: black;
 }
 
-.button_save:hover{
+.button-save__hover{
   background-color:gray;
 }
 
@@ -128,7 +130,7 @@
   margin-left: 19px;
 }
 
-.button_close {
+.button__close {
   width: 26px;
   top: -65px;
   left: 247px;
@@ -144,7 +146,7 @@
   margin-left: 22px;
 }
 
-.popup_title{
+.popup__title{
   padding-top: 25px;
   padding-bottom: 76px;
   color: #000;
@@ -155,7 +157,7 @@
   line-height: normal;
 }
 
-.popup_name{
+.popup__name{
   width: 238px;
   padding-bottom: 9px;
   color: #000;
@@ -166,7 +168,7 @@
   line-height: normal;
 }
 
-.popup_aboutme {
+.popup__aboutme {
   width: 238px;
   padding-top: 30px;
   color: #000;
@@ -177,7 +179,7 @@
   line-height: normal;
 }
 
-.button_save { 
+.button__save { 
   width: 238px;
   margin-top: 46px;
   margin-bottom: 25px;

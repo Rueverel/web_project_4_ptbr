@@ -9,7 +9,7 @@
   border-bottom-style: solid;
 }
 
-.header_logo {
+.header__logo {
   padding-top: 45px;
   padding-bottom: 41px;
 }
@@ -22,7 +22,7 @@
   padding-right: 100px; */
 }
   
-.header_logo{
+.header__logo{
   padding-left: 0px;
 }
   
@@ -36,7 +36,7 @@
   padding-right: 0px; */
 }
 
-.header_logo{
+.header__logo{
   padding-left: 27px;
 }
 
