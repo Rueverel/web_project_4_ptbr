@@ -10,4 +10,4 @@
 
 - ### JS para o popup de formulário;
 
-* [Link para o projeto no navegador](https://github.com/Rueverel/web_project_4_ptbr)
+* [Link para o projeto no navegador](https://rueverel.github.io/web_project_4_ptbr/)
