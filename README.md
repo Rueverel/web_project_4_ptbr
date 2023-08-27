@@ -1,6 +1,6 @@
 # Projeto 5:  EUA Afora
 
-### Este projeto tem como propósito consolidar todos os conhecimentos aprendidos da Sprint 4 do curso Desenvolvedor Web da Tripleten, entre eles a responividade e o uso do JavaScript.
+### Este projeto tem como propósito consolidar todos os conhecimentos aprendidos da Sprint 5 do curso Desenvolvedor Web da Tripleten, entre eles a responividade e o uso do JavaScript.
 
 ## Tecnologias Usadas:
 
