@@ -4,9 +4,9 @@ const nomePopup = document.querySelector(".popup__name");
 const aboutPopup = document.querySelector(".popup__aboutme");
 const nomePerfil = document.querySelector(".profile__noum");
 const aboutPerfil = document.querySelector(".profile__hobbie");
-const editButton = document.querySelector(".edit__button");
-const saveButton = document.querySelector(".button__save");
-const closeButton = document.querySelector(".button__close");
+const editButton = document.querySelector(".profile__edit-button");
+const saveButton = document.querySelector(".popup__button-save");
+const closeButton = document.querySelector(".popup__button-close");
 
 nomePopup.value = nomePerfil.textContent;
 aboutPopup.value = aboutPerfil.textContent;

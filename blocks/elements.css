@@ -41,16 +41,16 @@
   margin: 0;
 }
 
-.like__button {
+.element__like-button {
   background-color: white;
   border: none;
 }
 
-.like__button__img {
+.element__img-like-button {
   background-color: white;
 }
 
-.like__button__img:hover {
+.element__img-like-button:hover {
   cursor: pointer;
   opacity: 0.5;
   /* position: absolute; */
@@ -59,7 +59,7 @@
   background-position: center; */
 }
 
-.like__button:active {
+.element__img-like-button:active {
   color: #000;
 }
 

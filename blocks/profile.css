@@ -30,6 +30,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin: auto;
 }
 
 .profile__hobbie {
@@ -39,24 +40,25 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-top: 16px;
+  /* padding-top: 16px; */
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin-left: 0px;
 }
 
-.edit__button{
+.profile__edit-button{
   padding-left: 18px;
   border: none;
   background-color: black;
 }
 
-.edit__button:hover{
+.profile__edit-button:hover{
   opacity: 0.8;
   cursor: pointer;
 }
 
-.add__button {
+.profile__add-button {
   display: flex;
   justify-content: center;
   width: 150px;
@@ -68,7 +70,7 @@
   background-color: black;
 }
 
-.add__button:hover {
+.profile__add-button:hover {
   color: grey;
   border-color: gray;
   cursor: pointer;
@@ -88,7 +90,7 @@
   margin: auto;
 }
 
-.add__button {
+.profile__add-button {
   width: 100px;
   margin-left: 15px;
   margin-right: 15px;
@@ -138,17 +140,17 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-top: 14px;
+  /* padding-top: 14px; */
   margin-bottom:36px;
  
 }
 
-.edit__button{
+.profile__edit-button{
   padding-left: 10px;
   border: none;
 }
 
-.add__button {
+.profile__add-button {
   width: 282px;
   /* justify-content: center; */
   padding-left: 0px;
