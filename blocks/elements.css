@@ -60,7 +60,9 @@
 }
 
 .element__img-like-button:active {
-  color: #000;
+  background-image: url(/images/elements/Montanha.png);
+  /* background-color: #000; */
+  /* color: #000; */
 }
 
 @media (min-width: 768px)  and (max-width: 1279px) {

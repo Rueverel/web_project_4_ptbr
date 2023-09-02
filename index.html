@@ -7,13 +7,23 @@
   <title>Projeto 5 - Ao redor dos EUA</title>
 </head>
 <body>
-  <form class="popup">
+  <form class="popup popup__profile-edit">
     <button class="popup__button-close">+</button>
     <div class="popup__container">
       <h2 class="popup__title">Editar Perfil</h2>
       <input class="popup__name" type="text" id="idname" name="idname" maxlength="30">
-      <input class="popup__aboutme" id="idabout" name="idabout" type="text" maxlength="30">
+      <input class="popup__aboutme" type="text" id="idabout" name="idabout" maxlength="30">
       <button class="popup__button-save" type="submit">Salvar
+      </button>
+    </div>
+  </form>
+  <form class="popup popup__place-edit">
+    <button class="popup__button-close">+</button>
+    <div class="popup__container">
+      <h2 class="popup__title">Novo Local</h2>
+      <input class="popup__subtitle" type="text" id="idsutitle" name="idsubtitle" maxlength="30" placeholder="Título">
+      <input class="popup__link" type="text" id="idlink" name="idlink"  maxlength="30" placeholder="Link de imagem">
+      <button class="popup__button-create" type="submit">Criar
       </button>
     </div>
   </form>
