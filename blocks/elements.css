@@ -17,6 +17,7 @@
 
 .element__picture {
   width: 282px;
+  min-height: 282px;
   border-radius: 15px 15px 0% 0%;
 }
 
@@ -53,16 +54,22 @@
 .element__img-like-button:hover {
   cursor: pointer;
   opacity: 0.5;
-  /* position: absolute; */
-  /* content:url(/images/buttons/like_button_hover.png); */
-  /* background-repeat: no-repeat;
-  background-position: center; */
 }
 
-.element__img-like-button:active {
-  background-image: url(/images/elements/Montanha.png);
-  /* background-color: #000; */
-  /* color: #000; */
+.element__img-like-button-active { /*ainda em construção* TALVEZ SEJA DESABILITADO!?*/
+  background: url(/images/buttons/like_button_active.png) center no-repeat;
+}
+.element__trash {
+  position: absolute;
+  border: none;
+  padding-top: 18px;
+  padding-left: 249px;
+  background-color: transparent;
+}
+
+.element__trash:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 @media (min-width: 768px)  and (max-width: 1279px) {
@@ -80,6 +87,7 @@
   .elements {
     width: fit-content;
     display: grid;
+    padding-left: 0px;
     grid-template-columns: 1fr;
     grid-template-rows: 6fr;
     padding-top: 36px;

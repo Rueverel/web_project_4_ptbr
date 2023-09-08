@@ -27,7 +27,8 @@ const template = document.querySelector("#element__template");
 const elementItem = template.content.cloneNode(true);
 const elementList = elementItem.querySelector(".element");  
 const elementTrash = elementItem.querySelector(".element__trash");
-const elementLike = document.querySelector(".element__img-like-button"); //TESTE LIKE ACTIVE BOTAO EM SI
+const elementLike = elementItem.querySelector(".element__like-button"); //TESTE LIKE ACTIVE BOTAO EM SI
+const elementLike2 = elementItem.querySelector(".element__img-like-button"); //TESTE LIKE ACTIVE IMAGEM 
 
 const addNomePlace = elementItem.querySelector(".element__text");
 const addLinkPlace = elementItem.querySelector(".element__picture");
@@ -144,6 +145,7 @@ function newCard() {
 };
 
 //BOTAO CRIAR POPUP PLACES (SAVE INFO) - RETIFICAR PORQUE BOTAO CLOSE TAMBEM CRIA CARD?!
+
 modalPlace.addEventListener('submit', (event) => {
   event.preventDefault()
 
@@ -163,30 +165,23 @@ createButton.addEventListener("click", function(){
   opaco.classList.remove("fade_on");
 });
 
-//BOTAO LIKE PLACES - TESTE DISLIKE
+//BOTAO LIKE PLACES
+//try {
+  elementLike.addEventListener("click", function(){
+    const elementLike = elementItem.querySelector(".element__like-button"); //TESTE LIKE ACTIVE BOTAO EM SI
+    const elementLike2 = elementItem.querySelector(".element__img-like-button"); //TESTE LIKE ACTIVE IMAGEM 
+    //elementLike.classList.remove("element__img-like-button");
+    elementLike.classList.add("element__img-like-button-active"); //TESTE LIKE ACTIVE
+    //img.setAttribute src = "/images/buttons/like_button_active.png";
+    //elementLike.setAttribute("src")
 
-//elements.addEventListener("click", (event) => {
-//  const elementLike = document.querySelector(".element__img-like-button");
 
-//  if (event.target.classList.contains("element__img-like-button")) {
-//    if (elementLike.id === "true") {
-//    elementLike.src = "/images/buttons/like_button.png";
-//    elementLike.id = "disabled";
-//    }}});
 
-//BOTAO LIKE PLACES - TESTE LIKE
-
-elements.addEventListener("click", (event) => {
-  if (event.target.classList.contains("element__img-like-button")) {
-    const button_like = event.target; 
-    const active = button_like.getAttribute("data-liked") === "true";
-
-  if (active) {
-    button_like.src = "/images/buttons/like_button.png"; //altera a imagem
-    button_like.setAttribute("data-liked", "false");
-  
-  } else {
-    button_like.src = "/images/buttons/like_button_active.png";
-    button_like.setAttribute("data-liked", "true");
-
-}}});
+  //  this.classList.add("element__img-like-button-active", "true");
+  //  //setAttribute("data-clicked", "true");
+    //classList.add("element__img-like-button-active");
+  });
+//} catch (error) {
+//  console.error(error);
+//}
+;

@@ -1,0 +1,71 @@
+//Criação dos cartões
+
+function CreateElement (cards) {
+
+  const template = document.querySelector("#element__template");
+  const elementItem = template.content.cloneNode(true);
+  const elementList = elementItem.querySelector(".element");
+
+  const addNomePlace = document.querySelector(".popup__subtitle");
+  const addLinkPlace = document.querySelector("popup__link");
+
+  addNomePlace.textContent = cards.name;
+  addLinkPlace.src = cards.link;
+  addLinkPlace.alt = cards.name;
+
+  elements.append(elementList);
+
+}
+
+modalPlace.addEventListener('submit', (event) => {
+  event.preventDefault()
+  const tempCard = {
+    name: addNomePlace.value,
+    link: addLinkPlace.value,
+  }
+  CreateElement(tempCard)
+
+  addNomePlace.value = "";
+  addLinkPlace.value = "";
+
+
+});
+
+/ função de crear cards
+function createCard(card) {
+  const cardTemplate = document.querySelector("#template");
+  const cardElement = cardTemplate.content.cloneNode(true);
+  const cards = document.querySelector(".cards");
+  const cardName = cardElement.querySelector(".cardtitle");
+  const cardImage = cardElement.querySelector(".cardimage");
+
+  cardName.textContent = card.name;
+  cardImage.src = card.link;
+  cardImage.alt = card.name;
+
+
+  const cardList = cardElement.querySelector(".card");
+  cards.append(cardList);
+
+  cardImage.addEventListener('click', (event) => {
+    popupImage.classList.add('popup_opened')
+    popupImage.querySelector('.card__image')?.remove()
+    popupImage.append(cardImage.cloneNode(true))
+
+  })
+}
+
+popupCardForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const cardsitem = {
+    name: addInputName.value,
+    link: addInputImage.value,
+  }
+  createCard(cardsitem)
+
+  addInputName.value = ''
+  addInputImage.value = ''
+});
+
+////////////////////////////////////////

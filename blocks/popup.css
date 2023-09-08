@@ -16,6 +16,11 @@
   display: flex;
 }
 
+/* .popup_transition {
+  transition-timing-function: ease-in;
+  transition-duration: 10s;
+} AINDA EM TESTE*/
+
 .popup__button-close {
   position: absolute;
   width: 40px;
@@ -29,7 +34,7 @@
   font-weight: 200;
   border:none;
   transform: rotate(-45deg);
-  background-color: black;
+  background-color: transparent;
 }
 
 .popup__button-close:hover {
