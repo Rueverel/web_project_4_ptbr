@@ -14,6 +14,10 @@ const aboutInputProfile = document.querySelector(".popup__aboutme");
 const nomePerfil = document.querySelector(".profile__noum");
 const aboutPerfil = document.querySelector(".profile__hobbie");
 
+//INFOS EXIBIDOS NO POPUP IMAGE BIG
+const imagemGrande = document.querySelector(".popup__container-image-bigger");
+const imagemTexto = document.querySelector(".popup__title-image-bigger");
+
 //BUTOES POPUP PERFIL
 const editButton = document.querySelector(".profile__edit-button");
 const saveButton = document.querySelector(".popup__button-save");
@@ -27,20 +31,20 @@ const addButton = document.querySelector(".profile__add-button"); //teste//
 const elements = document.querySelector(".elements");
 const template = document.querySelector("#element__template");
 const elementItem = template.content.cloneNode(true);
-const elementList = elementItem.querySelector(".element");  
-const elementTrash = elementItem.querySelector(".element__trash");
-const elementLike = document.querySelector(".element__img-like-button"); //TESTE LIKE ACTIVE BOTAO EM SI
-
+const elementList = elementItem.querySelector(".element");
+const elementTrash = elementItem.querySelector(".element__img-trash");
+const elementLike = document.querySelector(".element__img-like-button");
 const addNomePlace = elementItem.querySelector(".element__text");
 const addLinkPlace = elementItem.querySelector(".element__picture");
 
-//INFO PERFIL = INFO POPUP PERFIL 
+//INFO PERFIL = INFO POPUP PERFIL
 nomeInputProfile.value = nomePerfil.textContent;
 aboutInputProfile.value = aboutPerfil.textContent;
 
-//INFO POPUP IMAGE BIGGER = INFO IMAGEM SELECIONADA // TESTE!
-nomeInputProfile.value = nomePerfil.textContent;
-aboutInputProfile.value = aboutPerfil.textContent;
+//INFO POPUP IMAGE BIGGER = INFO IMAGEM SELECIONADA // TESTE! !! JA BUSCA IMAGEM E TEXTO SO NAO É DO LUGAR CERTO!
+imagemTexto.textContent = nomePerfil.textContent;
+//imagemGrande.src = nomePerfil.src; desativado para nao dar erro ate alterar fonte
+imagemGrande.alt = nomePerfil.textContent;
 
 //INFOS INSERIDO PELO POPUP PLACES
 const subtitleInputPlaces = document.querySelector(".popup__subtitle");
@@ -50,29 +54,29 @@ const linkInputPlaces = document.querySelector(".popup__link");
 const initialCards = [
   {
     name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
   },
   {
     name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
   },
   {
     name: "Montanhas Carecas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
   },
   {
     name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
   },
   {
     name: "Parque Nacional da Vanoise ",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
   },
   {
     name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
-  }
-]; 
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+  },
+];
 
 //FUNÇÃO DOS CARDS ORIGINAIS - NAO MEXER
 function createCards() {
@@ -96,114 +100,125 @@ function createCards() {
 createCards();
 
 //BOTAO ABRIR POPUP PERFIL
-editButton.addEventListener("click", function(){
+editButton.addEventListener("click", function () {
   modalProfile.classList.add("popup_opened");
   opaco.classList.add("fade_on");
 });
 
 //BOTAO ABRIR POPUP PLACES
-addButton.addEventListener("click", function(){
+addButton.addEventListener("click", function () {
   modalPlace.classList.add("popup_opened");
   opaco.classList.add("fade_on");
 });
 
-//BOTAO FECHAR POPUP PERFIL
-closeButtonProfile.addEventListener("click", function(){
-  modalProfile.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
-});
-
-//BOTAO FECHAR POPUP PLACES
-closeButtonPlace.addEventListener("click", function(){
-  modalPlace.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
-});
-
-//BOTAO FECHAR POPUP IMAGEM GRANDE
-closeButtonPictureBig.addEventListener("click", function(){
-  modalPictureBig.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
-});
-
-// BOTAO SALVAR POPUP PERFIL (SAVE INFO)
-modalProfile.addEventListener('submit', (event) => {
-  event.preventDefault()
-  nomePerfil.textContent = nomeInputProfile.value;
-  aboutPerfil.textContent = aboutInputProfile.value;
-});
-
-//BOTAO SALVAR POPUP PERFIL (CLOSE)
-saveButton.addEventListener("click", function(){
-  modalProfile.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
-});
-
-//FUNÇÃO DOS NOVOS CARDS
-function newCard() {
-
-  const template = document.querySelector("#element__template");      
-  const elementItem = template.content.cloneNode(true);               
-  const elements = document.querySelector(".elements");                   
-  const addNomePlace = elementItem.querySelector(".element__text");
-  const addLinkPlace = elementItem.querySelector(".element__picture");
-
-  addNomePlace.textContent = subtitleInputPlaces.value;
-  addLinkPlace.src = linkInputPlaces.value;
-  addLinkPlace.alt = subtitleInputPlaces.value;
-  
-    const cardList = elementItem.querySelector(".element");
-    elements.prepend(cardList);
-};
-
-//BOTAO CRIAR POPUP PLACES (SAVE INFO) - RETIFICAR PORQUE BOTAO CLOSE TAMBEM CRIA CARD?!
-modalPlace.addEventListener('submit', (event) => {
-  event.preventDefault()
-
-  const tempCard = {
-  name: subtitleInputPlaces.value,
-  link: linkInputPlaces.value,
-  }
-  newCard(tempCard);
-
-  subtitleInputPlaces.value = "";
-  linkInputPlaces.value = "";
-});
-
-//BOTAO CRIAR POPUP PLACES (CLOSE)
-createButton.addEventListener("click", function(){
-  modalPlace.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
-});
-
-//BOTAO LIKE PLACES - NAO MEXER
-
-elements.addEventListener("click", (event) => {
-  if (event.target.classList.contains("element__img-like-button")) {
-    const button_like = event.target; 
-    const active = button_like.getAttribute("data-liked") === "true";
-
-  if (active) {
-    button_like.src = "/images/buttons/like_button.png"; //altera a imagem
-    button_like.setAttribute("data-liked", "false");
-  
-  } else {
-    button_like.src = "/images/buttons/like_button_active.png";
-    button_like.setAttribute("data-liked", "true");
-
-}}});
-
-//EVENTO DE CLICK PARA ABRIR IMAGEM
+//BOTAO ABRIR IMAGEM
 
 elements.addEventListener("click", (event) => {
   if (event.target.classList.contains("element__picture")) {
-  modalPictureBig.classList.add("popup_opened");
-  opaco.classList.add("fade_on");
-  alert("4rd STEP :)");
-
-}});
+    modalPictureBig.classList.add("popup_opened");
+    opaco.classList.add("fade_on");
+    alert("4rd STEP :)");
+  }
+});
 
 //1 ST STEP - REAGIR AO CLICAR NA IMAGEM
 //2 ND STEP - ABRIR POPUP
 //3 RD STEP - POPUP COM BLOCOS FORMADOS (IMAGEM E TEXTO)
 // 4RD STEP - POPUP EXIBE A IMAGEM CLICADA E O TEXTO DA MESMA (EM CONSTRUÇÃO)
 
+//BOTAO FECHAR POPUP PERFIL
+closeButtonProfile.addEventListener("click", function () {
+  modalProfile.classList.remove("popup_opened");
+  opaco.classList.remove("fade_on");
+});
+
+//BOTAO FECHAR POPUP PLACES
+closeButtonPlace.addEventListener("click", function () {
+  modalPlace.classList.remove("popup_opened");
+  opaco.classList.remove("fade_on");
+});
+
+//BOTAO FECHAR POPUP IMAGEM GRANDE
+closeButtonPictureBig.addEventListener("click", function () {
+  modalPictureBig.classList.remove("popup_opened");
+  opaco.classList.remove("fade_on");
+});
+
+// BOTAO SALVAR POPUP PERFIL (SAVE INFO)
+modalProfile.addEventListener("submit", (event) => {
+  event.preventDefault();
+  nomePerfil.textContent = nomeInputProfile.value;
+  aboutPerfil.textContent = aboutInputProfile.value;
+});
+
+//BOTAO SALVAR POPUP PERFIL (CLOSE)
+saveButton.addEventListener("click", function () {
+  modalProfile.classList.remove("popup_opened");
+  opaco.classList.remove("fade_on");
+});
+
+//FUNÇÃO DOS NOVOS CARDS
+function newCard() {
+  const template = document.querySelector("#element__template");
+  const elementItem = template.content.cloneNode(true);
+  const elements = document.querySelector(".elements");
+  const addNomePlace = elementItem.querySelector(".element__text");
+  const addLinkPlace = elementItem.querySelector(".element__picture");
+
+  addNomePlace.textContent = subtitleInputPlaces.value;
+  addLinkPlace.src = linkInputPlaces.value;
+  addLinkPlace.alt = subtitleInputPlaces.value;
+
+  const cardList = elementItem.querySelector(".element");
+  elements.prepend(cardList);
+}
+
+//BOTAO CRIAR POPUP PLACES (SAVE INFO) - RETIFICAR PORQUE BOTAO CLOSE TAMBEM CRIA CARD?!
+modalPlace.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+
+  subtitleInputPlaces.value = "";
+  linkInputPlaces.value = "";
+});
+
+//BOTAO CRIAR POPUP PLACES (CLOSE)
+createButton.addEventListener("click", function () {
+  modalPlace.classList.remove("popup_opened");
+  opaco.classList.remove("fade_on");
+
+  
+  const tempCard = {
+    name: subtitleInputPlaces.value,
+    link: linkInputPlaces.value,
+  };
+  
+  newCard(tempCard);
+});
+
+//BOTAO LIKE PLACES - NAO MEXER
+
+elements.addEventListener("click", (event) => {
+  if (event.target.classList.contains("element__img-like-button")) {
+    const button_like = event.target;
+    const active = button_like.getAttribute("data-liked") === "true";
+
+    if (active) {
+      button_like.src = "/images/buttons/like_button.png"; //altera a imagem
+      button_like.setAttribute("data-liked", "false");
+    } else {
+      button_like.src = "/images/buttons/like_button_active.png";
+      button_like.setAttribute("data-liked", "true");
+    }
+  }
+});
+
+//FUNÇÃO EXCLUIR CARDS
+
+elements.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (event.target.classList.contains("element__img-trash")) {
+    const button_like = event.target.parentNode.parentNode;
+    button_like.remove();
+  }
+});
