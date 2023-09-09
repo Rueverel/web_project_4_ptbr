@@ -1,6 +1,7 @@
 //POPUP PERFIL E PLACES
 const modalProfile = document.querySelector(".popup__profile-edit");
 const modalPlace = document.querySelector(".popup__place-edit");
+const modalPictureBig = document.querySelector(".popup__image-bigger");
 
 //EFEITO OPACITY - DESCONTINUAR?
 const opaco = document.querySelector(".fade");
@@ -19,8 +20,9 @@ const saveButton = document.querySelector(".popup__button-save");
 const createButton = document.querySelector(".popup__button-create"); //teste//
 const closeButtonProfile = document.querySelector(".popup__button-close-profile");
 const closeButtonPlace = document.querySelector(".popup__button-close-place");
+const closeButtonPictureBig = document.querySelector(".popup__button-close-image-bigger");
 
-const addButton = document.querySelector(".profile__add-button") //teste//
+const addButton = document.querySelector(".profile__add-button"); //teste//
 
 const elements = document.querySelector(".elements");
 const template = document.querySelector("#element__template");
@@ -33,6 +35,10 @@ const addNomePlace = elementItem.querySelector(".element__text");
 const addLinkPlace = elementItem.querySelector(".element__picture");
 
 //INFO PERFIL = INFO POPUP PERFIL 
+nomeInputProfile.value = nomePerfil.textContent;
+aboutInputProfile.value = aboutPerfil.textContent;
+
+//INFO POPUP IMAGE BIGGER = INFO IMAGEM SELECIONADA // TESTE!
 nomeInputProfile.value = nomePerfil.textContent;
 aboutInputProfile.value = aboutPerfil.textContent;
 
@@ -113,6 +119,12 @@ closeButtonPlace.addEventListener("click", function(){
   opaco.classList.remove("fade_on");
 });
 
+//BOTAO FECHAR POPUP IMAGEM GRANDE
+closeButtonPictureBig.addEventListener("click", function(){
+  modalPictureBig.classList.remove("popup_opened");
+  opaco.classList.remove("fade_on");
+});
+
 // BOTAO SALVAR POPUP PERFIL (SAVE INFO)
 modalProfile.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -163,18 +175,7 @@ createButton.addEventListener("click", function(){
   opaco.classList.remove("fade_on");
 });
 
-//BOTAO LIKE PLACES - TESTE DISLIKE
-
-//elements.addEventListener("click", (event) => {
-//  const elementLike = document.querySelector(".element__img-like-button");
-
-//  if (event.target.classList.contains("element__img-like-button")) {
-//    if (elementLike.id === "true") {
-//    elementLike.src = "/images/buttons/like_button.png";
-//    elementLike.id = "disabled";
-//    }}});
-
-//BOTAO LIKE PLACES - TESTE LIKE
+//BOTAO LIKE PLACES - NAO MEXER
 
 elements.addEventListener("click", (event) => {
   if (event.target.classList.contains("element__img-like-button")) {
@@ -190,3 +191,19 @@ elements.addEventListener("click", (event) => {
     button_like.setAttribute("data-liked", "true");
 
 }}});
+
+//EVENTO DE CLICK PARA ABRIR IMAGEM
+
+elements.addEventListener("click", (event) => {
+  if (event.target.classList.contains("element__picture")) {
+  modalPictureBig.classList.add("popup_opened");
+  opaco.classList.add("fade_on");
+  alert("4rd STEP :)");
+
+}});
+
+//1 ST STEP - REAGIR AO CLICAR NA IMAGEM
+//2 ND STEP - ABRIR POPUP
+//3 RD STEP - POPUP COM BLOCOS FORMADOS (IMAGEM E TEXTO)
+// 4RD STEP - POPUP EXIBE A IMAGEM CLICADA E O TEXTO DA MESMA (EM CONSTRUÇÃO)
+

@@ -1,5 +1,6 @@
 .fade {
   opacity: 1;
+  transition: visibility 1s, opacity 1s linear;
 }
 
 .fade_on {

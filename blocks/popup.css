@@ -1,5 +1,5 @@
 .popup {
-  display: none;
+  display: flex;
   position:fixed;
   flex-direction: column;
   width: 430px;
@@ -10,16 +10,16 @@
   background-color: white;
   z-index: 1;
   border-radius: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s linear;
 }
 
 .popup_opened {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
-/* .popup_transition {
-  transition-timing-function: ease-in;
-  transition-duration: 10s;
-} AINDA EM TESTE*/
 
 .popup__button-close {
   position: absolute;
@@ -118,10 +118,45 @@
   background-color:gray;
 }
 
+.popup__image-bigger { /* A SER CONSTRUIDO*/
+  /*display: none; /*ATE ESTAR CONSTRUIDO FICA FLEX*/
+  position:fixed;
+  flex-direction: column;
+  max-width: 75vw;
+  max-height: 75vh;
+  /* background-color: white; SERÁ PARA REMOVER */
+}
+
+.popup__title-image-bigger{
+  position: absolute;
+  /* width: 40px; */
+  margin:0px;
+  bottom: -23px;
+  /* bottom: -40px; */
+  /* left: 420px; */
+  /*right: -415px; */
+  color:white;
+  font-family: 'Inter', Arial;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  border:none;
+  /* transform: rotate(-45deg); */
+  background-color: transparent;
+
+}
+
 @media (min-width: 501px)  and (max-width: 850px) {
 
 .popup {
   margin-left:25%;
+}
+
+.popup__image-bigger {
+  margin-top: 123px;
+  margin-left: 12.5vw;
 }
 
 }
@@ -191,6 +226,16 @@
   padding-top: 14px;
   padding-bottom: 14px;
 
+}
+
+.popup__image-bigger {
+  margin-top: 123px;
+  margin-left: 12.5vw;
+}
+
+.popup__button-close-image-bigger{
+  top: -43px;
+  left: 230px;
 }
 
 }
