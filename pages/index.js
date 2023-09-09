@@ -1,7 +1,7 @@
 //POPUP PERFIL E PLACES
-const modalProfile = document.querySelector(".popup__profile-edit");
-const modalPlace = document.querySelector(".popup__place-edit");
-const modalPictureBig = document.querySelector(".popup__image-bigger");
+const modalProfile = document.querySelector(".popup_profile-edit");
+const modalPlace = document.querySelector(".popup_place-edit");
+const modalPictureBig = document.querySelector(".popup_image-bigger");
 
 //EFEITO OPACITY - DESCONTINUAR?
 const opaco = document.querySelector(".fade");
@@ -120,11 +120,6 @@ elements.addEventListener("click", (event) => {
   }
 });
 
-//1 ST STEP - REAGIR AO CLICAR NA IMAGEM
-//2 ND STEP - ABRIR POPUP
-//3 RD STEP - POPUP COM BLOCOS FORMADOS (IMAGEM E TEXTO)
-// 4RD STEP - POPUP EXIBE A IMAGEM CLICADA E O TEXTO DA MESMA (EM CONSTRUÇÃO)
-
 //BOTAO FECHAR POPUP PERFIL
 closeButtonProfile.addEventListener("click", function () {
   modalProfile.classList.remove("popup_opened");
@@ -202,10 +197,10 @@ elements.addEventListener("click", (event) => {
     const active = button_like.getAttribute("data-liked") === "true";
 
     if (active) {
-      button_like.src = "/images/buttons/like_button.png"; //altera a imagem
+      button_like.src = "/images/buttons/botao_curtir.png"; //altera a imagem
       button_like.setAttribute("data-liked", "false");
     } else {
-      button_like.src = "/images/buttons/like_button_active.png";
+      button_like.src = "/images/buttons/botao_curtir_ativo.png";
       button_like.setAttribute("data-liked", "true");
     }
   }

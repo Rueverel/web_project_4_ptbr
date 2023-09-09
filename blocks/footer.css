@@ -7,33 +7,28 @@
 
 .footer__text {
   color: #545454;
-  font-family: 'Inter', Arial;
+  font-family: "Inter", Arial;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-@media (min-width: 768px)  and (max-width: 1279px) {
-
-.footer {
-  padding-left: 100px;
+@media (min-width: 768px) and (max-width: 1279px) {
+  .footer {
+    padding-left: 100px;
+  }
 }
 
-}
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 19px;
+  }
 
-@media (min-width: 320px)  and (max-width: 767px) { 
-
-.footer {
-  display: flex;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 19px;
-
-}
-
-.footer__text {
-  font-size: 14px;
-}
-
+  .footer__text {
+    font-size: 14px;
+  }
 }
