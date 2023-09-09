@@ -41,11 +41,6 @@ const addLinkPlace = elementItem.querySelector(".element__picture");
 nomeInputProfile.value = nomePerfil.textContent;
 aboutInputProfile.value = aboutPerfil.textContent;
 
-//INFO POPUP IMAGE BIGGER = INFO IMAGEM SELECIONADA // TESTE! !! JA BUSCA IMAGEM E TEXTO SO NAO É DO LUGAR CERTO!
-imagemTexto.textContent = nomePerfil.textContent;
-//imagemGrande.src = nomePerfil.src; desativado para nao dar erro ate alterar fonte
-imagemGrande.alt = nomePerfil.textContent;
-
 //INFOS INSERIDO PELO POPUP PLACES
 const subtitleInputPlaces = document.querySelector(".popup__subtitle");
 const linkInputPlaces = document.querySelector(".popup__link");
@@ -117,7 +112,11 @@ elements.addEventListener("click", (event) => {
   if (event.target.classList.contains("element__picture")) {
     modalPictureBig.classList.add("popup_opened");
     opaco.classList.add("fade_on");
-    alert("4rd STEP :)");
+    const bigPicture = event.target;
+
+    imagemTexto.textContent = bigPicture.alt;
+    imagemGrande.src = bigPicture.src;
+    imagemGrande.alt = bigPicture.alt;
   }
 });
 
@@ -176,7 +175,6 @@ function newCard() {
 //BOTAO CRIAR POPUP PLACES (SAVE INFO) - RETIFICAR PORQUE BOTAO CLOSE TAMBEM CRIA CARD?!
 modalPlace.addEventListener("submit", (event) => {
   event.preventDefault();
-
 
   subtitleInputPlaces.value = "";
   linkInputPlaces.value = "";

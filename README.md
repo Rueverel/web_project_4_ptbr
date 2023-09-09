@@ -8,6 +8,6 @@
 
 - ### CSS para estilização do mesmo;
 
-- ### JS para o popup de formulário;
+- ### JS para o popup dos formulários;
 
 * [Link para o projeto no navegador](https://rueverel.github.io/web_project_4_ptbr/)
