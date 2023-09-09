@@ -4,19 +4,19 @@ const modalPlace = document.querySelector(".popup_place-edit");
 const modalPictureBig = document.querySelector(".popup_image-bigger");
 
 //EFEITO OPACITY - DESCONTINUAR?
-const opaco = document.querySelector(".fade");
+const opacity = document.querySelector(".fade");
 
 //INFOS INSERIDO PELO POPUP
-const nomeInputProfile = document.querySelector(".popup__name");
+const nameInputProfile = document.querySelector(".popup__name");
 const aboutInputProfile = document.querySelector(".popup__aboutme");
 
 //INFOS EXIBIDOS NO PEFIL
-const nomePerfil = document.querySelector(".profile__noum");
-const aboutPerfil = document.querySelector(".profile__hobbie");
+const nameProfile = document.querySelector(".profile__noum");
+const aboutProfile = document.querySelector(".profile__hobbie");
 
 //INFOS EXIBIDOS NO POPUP IMAGE BIG
-const imagemGrande = document.querySelector(".popup__container-image-bigger");
-const imagemTexto = document.querySelector(".popup__title-image-bigger");
+const imageBigger = document.querySelector(".popup__container-image-bigger");
+const imageText = document.querySelector(".popup__title-image-bigger");
 
 //BUTOES POPUP PERFIL
 const editButton = document.querySelector(".profile__edit-button");
@@ -38,8 +38,8 @@ const addNomePlace = elementItem.querySelector(".element__text");
 const addLinkPlace = elementItem.querySelector(".element__picture");
 
 //INFO PERFIL = INFO POPUP PERFIL
-nomeInputProfile.value = nomePerfil.textContent;
-aboutInputProfile.value = aboutPerfil.textContent;
+nameInputProfile.value = nameProfile.textContent;
+aboutInputProfile.value = aboutProfile.textContent;
 
 //INFOS INSERIDO PELO POPUP PLACES
 const subtitleInputPlaces = document.querySelector(".popup__subtitle");
@@ -97,13 +97,13 @@ createCards();
 //BOTAO ABRIR POPUP PERFIL
 editButton.addEventListener("click", function () {
   modalProfile.classList.add("popup_opened");
-  opaco.classList.add("fade_on");
+  opacity.classList.add("fade_on");
 });
 
 //BOTAO ABRIR POPUP PLACES
 addButton.addEventListener("click", function () {
   modalPlace.classList.add("popup_opened");
-  opaco.classList.add("fade_on");
+  opacity.classList.add("fade_on");
 });
 
 //BOTAO ABRIR IMAGEM
@@ -111,44 +111,44 @@ addButton.addEventListener("click", function () {
 elements.addEventListener("click", (event) => {
   if (event.target.classList.contains("element__picture")) {
     modalPictureBig.classList.add("popup_opened");
-    opaco.classList.add("fade_on");
+    opacity.classList.add("fade_on");
     const bigPicture = event.target;
 
-    imagemTexto.textContent = bigPicture.alt;
-    imagemGrande.src = bigPicture.src;
-    imagemGrande.alt = bigPicture.alt;
+    imageText.textContent = bigPicture.alt;
+    imageBigger.src = bigPicture.src;
+    imageBigger.alt = bigPicture.alt;
   }
 });
 
 //BOTAO FECHAR POPUP PERFIL
 closeButtonProfile.addEventListener("click", function () {
   modalProfile.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
+  opacity.classList.remove("fade_on");
 });
 
 //BOTAO FECHAR POPUP PLACES
 closeButtonPlace.addEventListener("click", function () {
   modalPlace.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
+  opacity.classList.remove("fade_on");
 });
 
 //BOTAO FECHAR POPUP IMAGEM GRANDE
 closeButtonPictureBig.addEventListener("click", function () {
   modalPictureBig.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
+  opacity.classList.remove("fade_on");
 });
 
 // BOTAO SALVAR POPUP PERFIL (SAVE INFO)
 modalProfile.addEventListener("submit", (event) => {
   event.preventDefault();
-  nomePerfil.textContent = nomeInputProfile.value;
-  aboutPerfil.textContent = aboutInputProfile.value;
+  nameProfile.textContent = nameInputProfile.value;
+  aboutProfile.textContent = aboutInputProfile.value;
 });
 
 //BOTAO SALVAR POPUP PERFIL (CLOSE)
 saveButton.addEventListener("click", function () {
   modalProfile.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
+  opacity.classList.remove("fade_on");
 });
 
 //FUNÇÃO DOS NOVOS CARDS
@@ -178,7 +178,7 @@ modalPlace.addEventListener("submit", (event) => {
 //BOTAO CRIAR POPUP PLACES (CLOSE)
 createButton.addEventListener("click", function () {
   modalPlace.classList.remove("popup_opened");
-  opaco.classList.remove("fade_on");
+  opacity.classList.remove("fade_on");
 
   
   const tempCard = {
