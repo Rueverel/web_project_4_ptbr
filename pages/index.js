@@ -3,7 +3,7 @@ const modalProfile = document.querySelector(".popup_profile-edit");
 const modalPlace = document.querySelector(".popup_place-edit");
 const modalPictureBig = document.querySelector(".popup_image-bigger");
 
-//EFEITO OPACITY - DESCONTINUAR?
+//EFEITO OPACITY
 const opacity = document.querySelector(".fade");
 
 //INFOS INSERIDO PELO POPUP

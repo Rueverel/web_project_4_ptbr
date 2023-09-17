@@ -12,7 +12,9 @@
     <div class="popup__container">
       <h2 class="popup__title">Editar Perfil</h2>
       <input class="popup__name" type="text" id="idname" name="idname" maxlength="30">
+      <a class="popup__error">Aqui vai a mensagem de erro... </a>
       <input class="popup__aboutme" type="text" id="idabout" name="idabout" maxlength="30">
+      <a class="popup__error">Aqui vai a mensagem de erro... </a>
       <button class="popup__button-save" type="submit">Salvar
       </button>
     </div>
@@ -21,8 +23,10 @@
     <button class="popup__button-close popup__button-close-place">+</button>
     <div class="popup__container">
       <h2 class="popup__title">Novo Local</h2>
-      <input class="popup__subtitle" type="text" id="idsutitle" name="idsubtitle" maxlength="30" placeholder="Título">
-      <input class="popup__link" type="text" id="idlink" name="idlink" placeholder="Link de imagem">
+      <input class="popup__subtitle" type="text" id="idsutitle" name="idsubtitle" minlength="2" maxlength="40" placeholder="Título">
+      <a class="popup__error">Aqui vai a mensagem de erro... </a>
+      <input class="popup__link" type="text" id="idlink" name="idlink" minlength="2" maxlength="200" placeholder="Link de imagem">
+      <a class="popup__error">Aqui vai a mensagem de erro... </a>
       <button class="popup__button-create" type="submit">Criar
       </button>
     </div>
