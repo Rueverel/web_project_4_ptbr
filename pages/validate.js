@@ -1,17 +1,16 @@
 function enableValidation () {
   const inputs = document.querySelectorAll(".popup__input");
-    inputs.forEach(function(input) {
-      input.addEventListener("input", function(event) {
-        const inputElement = event.target;
-        const errorElement = inputElement.closest(".popup__container").querySelector(".popup__error");
-        if(inputElement.validity.valid) {
-          hideInputError(errorElement);
-        } else {
-          showInputError(errorElement, inputElement.validationMessage);
-        }
-      });
-})
-
+  inputs.forEach(function(input) {
+    input.addEventListener("input", function(event) {
+      const inputElement = event.target;
+      const errorElement = inputElement.closest(".popup__container").querySelector(".popup__error");
+      if(inputElement.validity.valid) {
+        hideInputError(errorElement);
+      } else {
+        showInputError(errorElement, inputElement.validationMessage);
+      }
+    });
+  })
 }
 
 function hideInputError(errorElement) {
@@ -30,7 +29,7 @@ enableValidation({ //permite validar os diferentes formularios
   submitButtonSelector: ".popup__button", //alterar classe?
   inactiveButtonClass: "popup__button_disabled", //alterar classe?
   inputErrorClass: "popup__input_type_error", //alterar classe?
-  errorClass: ".popup__error-active"  
+  errorClass: ".popup__error-active"
 }); 
 
 

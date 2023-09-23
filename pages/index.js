@@ -94,30 +94,47 @@ function createCards() {
 //chama função para cards originais
 createCards();
 
-//BOTAO ABRIR POPUP PERFIL
+//BOTAO ABRIR POPUP PERFIL E FECHAR CLICANDO ESC
 editButton.addEventListener("click", function () {
   modalProfile.classList.add("popup_opened");
   opacity.classList.add("fade_on");
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape")
+    modalProfile.classList.remove("popup_opened");
+    opacity.classList.remove("fade_on");
+  })
 });
 
-//BOTAO ABRIR POPUP PLACES
+//BOTAO ABRIR POPUP PLACES  E FECHAR CLICANDO ESC
 addButton.addEventListener("click", function () {
   modalPlace.classList.add("popup_opened");
   opacity.classList.add("fade_on");
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") 
+    modalPlace.classList.remove("popup_opened");
+    opacity.classList.remove("fade_on"); 
+  })
 });
 
-//BOTAO ABRIR IMAGEM
-
+//BOTAO ABRIR IMAGEM E FECHAR CLICANDO ESC
 elements.addEventListener("click", (event) => {
   if (event.target.classList.contains("element__picture")) {
     modalPictureBig.classList.add("popup_opened");
     opacity.classList.add("fade_on");
+
     const bigPicture = event.target;
 
     imageText.textContent = bigPicture.alt;
     imageBigger.src = bigPicture.src;
     imageBigger.alt = bigPicture.alt;
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape")
+      console.log("Heloooo")
+      modalPictureBig.classList.remove("popup_opened");
+      opacity.classList.remove("fade_on");
   }
+)}
 });
 
 //BOTAO FECHAR POPUP PERFIL
