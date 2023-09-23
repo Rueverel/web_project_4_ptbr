@@ -77,6 +77,16 @@
   border-bottom-style: solid;
 }
 
+.popup__name__error,
+.popup__subtitle__error,
+.popup__aboutme__error,
+.popup__link__error {
+  border: none;
+  border-bottom: 1px;
+  border-color: red;
+  border-bottom-style: solid;
+}
+
 .popup__aboutme,
 .popup__link {
   width: 358px;
