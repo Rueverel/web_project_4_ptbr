@@ -130,7 +130,7 @@
 .popup__button-save-disabled,
 .popup__button-create-disabled {
   background-color: white;
-  color: Gainsboro;
+  color: gainsboro;
   border: solid 1px gainsboro;
 }
 
