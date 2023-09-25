@@ -1,13 +1,21 @@
 .popup__error {
-color: #F00;
-font-family: 'Inter';
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-visibility: hidden;
-}
+  width: 358px;
+  height: 30px;
+  /* border: 1px; */
+  padding-bottom: 13px;
+  color: #F00;
+  font-family: 'Inter';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  visibility: hidden;
+} 
 
 .popup__error-active {
   visibility: visible;
+  /* border: none; */
+  /* border: 1px; */
+  /* border-color: red; */
+  /* border-bottom-style: solid; */
 }

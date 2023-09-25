@@ -99,21 +99,35 @@ editButton.addEventListener("click", function () {
   modalProfile.classList.add("popup_opened");
   opacity.classList.add("fade_on");
   document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape")
+    if (event.key === "Escape") {
     modalProfile.classList.remove("popup_opened");
     opacity.classList.remove("fade_on");
-  })
+  }})
+  document.addEventListener("mousedown", (event) => {
+    if (!modalProfile.contains(event.target)) {
+  //    console.log("HELOO")
+  //    console.log(event.target)
+      modalProfile.classList.remove("popup_opened");
+      opacity.classList.remove("fade_on");
+    }})
 });
 
 //BOTAO ABRIR POPUP PLACES  E FECHAR CLICANDO ESC
 addButton.addEventListener("click", function () {
   modalPlace.classList.add("popup_opened");
   opacity.classList.add("fade_on");
+  createButton.disabled = true;
+  createButton.classList.add("popup__button-create-disabled");
   document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") 
+    if (event.key === "Escape") {
     modalPlace.classList.remove("popup_opened");
     opacity.classList.remove("fade_on"); 
-  })
+  }})
+  document.addEventListener("mousedown", (event) => {
+    if (!modalPlace.contains(event.target)) {
+      modalPlace.classList.remove("popup_opened");
+      opacity.classList.remove("fade_on");
+    }})
 });
 
 //BOTAO ABRIR IMAGEM E FECHAR CLICANDO ESC
@@ -129,12 +143,17 @@ elements.addEventListener("click", (event) => {
     imageBigger.alt = bigPicture.alt;
 
     document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape")
-      console.log("Heloooo")
+      if (event.key === "Escape") {
       modalPictureBig.classList.remove("popup_opened");
       opacity.classList.remove("fade_on");
-  }
+  }}
 )}
+    document.addEventListener("mousedown", (event) => {
+      if (!modalPictureBig.contains(event.target)) {
+        modalPictureBig.classList.remove("popup_opened");
+        opacity.classList.remove("fade_on");
+    }})
+
 });
 
 //BOTAO FECHAR POPUP PERFIL
@@ -232,3 +251,22 @@ elements.addEventListener("click", (event) => {
     button_like.remove();
   }
 });
+
+//&& event.target !== formulario !modalProfile || !modalPlace || !modalPictureBig ) 
+
+//document.addEventListener("mousedown", (event) => {
+//  if (!modalProfile.contains(event.target)) {
+//    console.log("HELOO")
+//    console.log(event.target)
+//    modalProfile.classList.remove("popup_opened");
+//    opacity.classList.remove("fade_on");
+  //} else if (!modalPlace.contains(event.target)) {
+  //  modalPlace.classList.remove("popup_opened");
+  //  opacity.classList.remove("fade_on");
+  //} else if (!modalPictureBig.contains(event.target)) {
+  //  modalPictureBig.classList.remove("popup_opened");
+  //  opacity.classList.remove("fade_on");
+  //}
+//});
+  
+  //TENTAR COLOCAR EVENTO DE CIMA DENTRO DE UMA FUNÇÃO E SER CHAMADO DENTRO DO ADD PROFILE

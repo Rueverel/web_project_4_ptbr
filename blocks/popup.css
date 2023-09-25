@@ -52,6 +52,7 @@
   width: auto;
   padding-top: 34px;
   padding-bottom: 54px;
+  margin:0px;
   background-color: white;
   color: #000;
   font-family: "Inter", Arial;
@@ -75,12 +76,10 @@
   border-bottom: 1px;
   border-color: gray;
   border-bottom-style: solid;
+  padding-bottom: 13px;
 }
 
-.popup__name__error,
-.popup__subtitle__error,
-.popup__aboutme__error,
-.popup__link__error {
+.popup__input-error {
   border: none;
   border-bottom: 1px;
   border-color: red;
@@ -90,7 +89,6 @@
 .popup__aboutme,
 .popup__link {
   width: 358px;
-  padding-top: 43px;
   background-color: white;
   color: #000;
   font-family: "Inter", Arial;
@@ -102,12 +100,12 @@
   border-bottom: 1px;
   border-color: gray;
   border-bottom-style: solid;
+  padding-bottom: 13px;
 }
 
 .popup__button-save,
 .popup__button-create {
   width: 358px;
-  margin-top: 61.34px;
   margin-bottom: 36.51px;
   padding-top: 13.66px;
   padding-bottom: 18.49px;
@@ -126,6 +124,14 @@
 .popup__button-save:hover,
 .popup__button-create:hover {
   background-color: gray;
+  
+}
+
+.popup__button-save-disabled,
+.popup__button-create-disabled {
+  background-color: white;
+  color: Gainsboro;
+  border: solid 1px gainsboro;
 }
 
 .popup__image-bigger {
