@@ -73,7 +73,7 @@ const initialCards = [
   },
 ];
 
-// FUNÇÃO FECHAR COR ESC
+// FUNÇÃO FECHAR COM ESC
 const escClick = function(event) {
   if (event.key === "Escape") {
   modalProfile.classList.remove("popup_opened");
@@ -82,6 +82,15 @@ const escClick = function(event) {
   opacity.classList.remove("fade_on");
   console.log("fechou?2");
   }};
+
+// FUNÇÃO NÃO FECHAR COM ENTER
+
+const enterClick = function(event) {
+  if(event.keyCode === 13) {
+            
+    e.preventDefault();
+      
+}};
 
 //FUNÇÃO DOS CARDS ORIGINAIS - NAO MEXER
 function createCards() {
@@ -108,7 +117,7 @@ createCards();
 editButton.addEventListener("click", function () {
   modalProfile.classList.add("popup_opened");
   opacity.classList.add("fade_on");
-  document.addEventListener("keydown", escClick);
+  document.addEventListener("keydown", escClick, enterClick);
     });
   document.addEventListener("mousedown", (event) => {
     if (!modalProfile.contains(event.target)) {
@@ -122,7 +131,7 @@ addButton.addEventListener("click", function () {
   opacity.classList.add("fade_on");
   createButton.disabled = true;
   createButton.classList.add("popup__button-create-disabled");
-  document.addEventListener("keydown", escClick);
+  document.addEventListener("keydown", escClick, enterClick);
   //document.removeEventListener("keydown", escClick);
 });
   //});
@@ -144,7 +153,7 @@ elements.addEventListener("click", (event) => {
     imageBigger.src = bigPicture.src;
     imageBigger.alt = bigPicture.alt;
 
-    document.addEventListener("keydown", escClick);
+    document.addEventListener("keydown", escClick, enterClick);
       }});
     document.addEventListener("mousedown", (event) => {
       if (!modalPictureBig.contains(event.target)) {
