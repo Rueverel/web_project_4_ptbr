@@ -81,6 +81,7 @@ const escClick = function(event) {
   modalPictureBig.classList.remove("popup_opened");
   opacity.classList.remove("fade_on");
   console.log("fechou?2");
+  document.removeEventListener("keydown", escClick);
   }};
 
 // FUNÇÃO NÃO FECHAR COM ENTER
