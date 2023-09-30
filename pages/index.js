@@ -73,6 +73,16 @@ const initialCards = [
   },
 ];
 
+// FUNÇÃO FECHAR COR ESC
+const escClick = function(event) {
+  if (event.key === "Escape") {
+  modalProfile.classList.remove("popup_opened");
+  modalPlace.classList.remove("popup_opened");
+  modalPictureBig.classList.remove("popup_opened");
+  opacity.classList.remove("fade_on");
+  console.log("fechou?2");
+  }};
+
 //FUNÇÃO DOS CARDS ORIGINAIS - NAO MEXER
 function createCards() {
   const template = document.querySelector("#element__template").content;
@@ -98,19 +108,13 @@ createCards();
 editButton.addEventListener("click", function () {
   modalProfile.classList.add("popup_opened");
   opacity.classList.add("fade_on");
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-    modalProfile.classList.remove("popup_opened");
-    opacity.classList.remove("fade_on");
-  }})
+  document.addEventListener("keydown", escClick);
+    });
   document.addEventListener("mousedown", (event) => {
     if (!modalProfile.contains(event.target)) {
-  //    console.log("HELOO")
-  //    console.log(event.target)
       modalProfile.classList.remove("popup_opened");
       opacity.classList.remove("fade_on");
-    }})
-});
+    }});
 
 //BOTAO ABRIR POPUP PLACES  E FECHAR CLICANDO ESC
 addButton.addEventListener("click", function () {
@@ -118,17 +122,15 @@ addButton.addEventListener("click", function () {
   opacity.classList.add("fade_on");
   createButton.disabled = true;
   createButton.classList.add("popup__button-create-disabled");
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-    modalPlace.classList.remove("popup_opened");
-    opacity.classList.remove("fade_on"); 
-  }})
+  document.addEventListener("keydown", escClick);
+  //document.removeEventListener("keydown", escClick);
+});
+  //});
   document.addEventListener("mousedown", (event) => {
     if (!modalPlace.contains(event.target)) {
       modalPlace.classList.remove("popup_opened");
       opacity.classList.remove("fade_on");
-    }})
-});
+    }});
 
 //BOTAO ABRIR IMAGEM E FECHAR CLICANDO ESC
 elements.addEventListener("click", (event) => {
@@ -142,19 +144,13 @@ elements.addEventListener("click", (event) => {
     imageBigger.src = bigPicture.src;
     imageBigger.alt = bigPicture.alt;
 
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") {
-      modalPictureBig.classList.remove("popup_opened");
-      opacity.classList.remove("fade_on");
-  }}
-)}
+    document.addEventListener("keydown", escClick);
+      }});
     document.addEventListener("mousedown", (event) => {
       if (!modalPictureBig.contains(event.target)) {
         modalPictureBig.classList.remove("popup_opened");
         opacity.classList.remove("fade_on");
-    }})
-
-});
+    }});
 
 //BOTAO FECHAR POPUP PERFIL
 closeButtonProfile.addEventListener("click", function () {
@@ -243,7 +239,6 @@ elements.addEventListener("click", (event) => {
 });
 
 //FUNÇÃO EXCLUIR CARDS
-
 elements.addEventListener("click", (event) => {
   event.preventDefault();
   if (event.target.classList.contains("element__img-trash")) {
@@ -251,22 +246,3 @@ elements.addEventListener("click", (event) => {
     button_like.remove();
   }
 });
-
-//&& event.target !== formulario !modalProfile || !modalPlace || !modalPictureBig ) 
-
-//document.addEventListener("mousedown", (event) => {
-//  if (!modalProfile.contains(event.target)) {
-//    console.log("HELOO")
-//    console.log(event.target)
-//    modalProfile.classList.remove("popup_opened");
-//    opacity.classList.remove("fade_on");
-  //} else if (!modalPlace.contains(event.target)) {
-  //  modalPlace.classList.remove("popup_opened");
-  //  opacity.classList.remove("fade_on");
-  //} else if (!modalPictureBig.contains(event.target)) {
-  //  modalPictureBig.classList.remove("popup_opened");
-  //  opacity.classList.remove("fade_on");
-  //}
-//});
-  
-  //TENTAR COLOCAR EVENTO DE CIMA DENTRO DE UMA FUNÇÃO E SER CHAMADO DENTRO DO ADD PROFILE
