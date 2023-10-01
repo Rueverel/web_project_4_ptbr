@@ -1,84 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/pages/index.css">
-  <title>Projeto 7 - Ao redor dos EUA</title>
-</head>
-<body>
-  <div class="overflow">
-  <form class="popup popup_profile-edit" novalidate>
-    <button class="popup__button-close popup__button-close-profile">+</button>
-    <div class="popup__container">
-      <h2 class="popup__title">Editar Perfil</h2>
-      <input class="popup__name popup__input" type="text" id="idname" name="idname" minlength="2" maxlength="40" required >
-      <a class="popup__error">Aqui vai a mensagem de erro... </a>
-      <input class="popup__aboutme popup__input" type="text" id="idabout" name="idabout" minlength="2" maxlength="200" required >
-      <a class="popup__error">Aqui vai a mensagem de erro... </a>
-      <button class="popup__button-save" type="submit" disabled>Salvar
-      </button>
-    </div>
-  </form>
-  </div>
-  <div class="overflow">
-  <form class="popup popup_place-edit" novalidate>
-    <button class="popup__button-close popup__button-close-place">+</button>
-    <div class="popup__container">
-      <h2 class="popup__title">Novo Local</h2>
-      <input class="popup__subtitle popup__input" type="text" id="idsutitle" name="idsubtitle" minlength="2" maxlength="30" placeholder="Título" required >
-      <a class="popup__error">Aqui vai a mensagem de erro... </a>
-      <input class="popup__link popup__input" type="url" id="idlink" name="idlink" placeholder="Link de imagem" required >
-      <a class="popup__error">Aqui vai a mensagem de erro... </a>
-      <button class="popup__button-create" type="submit" disabled>Criar
-      </button>
-    </div>
-  </form>
-</div>
-<div class="overflow">
-  <div class="popup popup_image-bigger">
-    <button class="popup__button-close popup__button-close-image-bigger">+</button>
-    <img class="popup__container-image-bigger" src= " " alt="Texto de teste xD">
-    <h2 class="popup__title-image-bigger" >Texto de teste xD </h2>
-  </div>
-  </div>
-  <div class="fade">
-    <header class="header">
-    <img class="header__logo" src="/images/header/header_logo.png" alt="logo of website">
-    </header>
-    <div class="profile">
-      <img class="avatar" src="/images/profile/avatar.jpg" alt="Avatar of User">
-      <div class="profile__info">
-        <h2 class="profile__noum">Jacques Cousteau</h2>
-        <button class="profile__edit-button">
-          <img src="/images/buttons/botao_editar.png" alt="edit button"> 
-          </button> 
-        <h3 class="profile__hobbie">Explorar</h3>
-      </div>
-      <button class="profile__add-button">+
-      </button>
-    </div>
-    <ul class="elements">
-    </ul>
-    <template id="element__template">
-      <li class="element">
-        <button class="element__trash">
-          <img class="element__img-trash" src="/images/buttons/botao_lixeira.svg" alt="trash button">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/pages/index.css" />
+    <title>Projeto 7 - Ao redor dos EUA</title>
+  </head>
+  <body>
+    <form class="popup popup_profile-edit" novalidate>
+      <button class="popup__button-close popup__button-close-profile">+</button>
+      <div class="popup__container">
+        <h2 class="popup__title">Editar Perfil</h2>
+        <input
+          class="popup__name popup__input"
+          type="text"
+          id="idname"
+          name="idname"
+          minlength="2"
+          maxlength="40"
+          required
+        />
+        <a class="popup__error">Aqui vai a mensagem de erro... </a>
+        <input
+          class="popup__aboutme popup__input"
+          type="text"
+          id="idabout"
+          name="idabout"
+          minlength="2"
+          maxlength="200"
+          required
+        />
+        <a class="popup__error">Aqui vai a mensagem de erro... </a>
+        <button class="popup__button-save" type="submit" disabled>
+          Salvar
         </button>
-        <img class="element__picture" src=" " alt="empty">
-        <div class="element__info">
-          <h2 class="element__text"></h2>
-          <button class="element__like-button">
-            <img class="element__img-like-button" src="/images/buttons/botao_curtir.png" alt="like button">
+      </div>
+    </form>
+    <form class="popup popup_place-edit" novalidate>
+      <button class="popup__button-close popup__button-close-place">+</button>
+      <div class="popup__container">
+        <h2 class="popup__title">Novo Local</h2>
+        <input
+          class="popup__subtitle popup__input"
+          type="text"
+          id="idsutitle"
+          name="idsubtitle"
+          minlength="2"
+          maxlength="30"
+          placeholder="Título"
+          required
+        />
+        <a class="popup__error">Aqui vai a mensagem de erro... </a>
+        <input
+          class="popup__link popup__input"
+          type="url"
+          id="idlink"
+          name="idlink"
+          placeholder="Link de imagem"
+          required
+        />
+        <a class="popup__error">Aqui vai a mensagem de erro... </a>
+        <button class="popup__button-create" type="submit" disabled>
+          Criar
+        </button>
+      </div>
+    </form>
+    <div class="popup popup_image-bigger">
+      <button class="popup__button-close popup__button-close-image-bigger">
+        +
+      </button>
+      <img
+        class="popup__container-image-bigger"
+        src=" "
+        alt="Texto de teste xD"
+      />
+      <h2 class="popup__title-image-bigger">Texto de teste xD</h2>
+    </div>
+    <div class="fade">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="/images/header/header_logo.png"
+          alt="logo of website"
+        />
+      </header>
+      <div class="profile">
+        <img
+          class="avatar"
+          src="/images/profile/avatar.jpg"
+          alt="Avatar of User"
+        />
+        <div class="profile__info">
+          <h2 class="profile__noum">Jacques Cousteau</h2>
+          <button class="profile__edit-button">
+            <img src="/images/buttons/botao_editar.png" alt="edit button" />
           </button>
+          <h3 class="profile__hobbie">Explorar</h3>
         </div>
-      </li>
-    </template>
-    <footer class="footer">
-      <h2 class="footer__text">© 2021 Around The U.S.</h2>
-    </footer>
-  </div> 
-  <script src="/pages/index.js"></script>
-  <script src="/pages/validate.js"></script>
-</body>
+        <button class="profile__add-button">+</button>
+      </div>
+      <ul class="elements"></ul>
+      <template id="element__template">
+        <li class="element">
+          <button class="element__trash">
+            <img
+              class="element__img-trash"
+              src="/images/buttons/botao_lixeira.svg"
+              alt="trash button"
+            />
+          </button>
+          <img class="element__picture" src=" " alt="empty" />
+          <div class="element__info">
+            <h2 class="element__text"></h2>
+            <button class="element__like-button">
+              <img
+                class="element__img-like-button"
+                src="/images/buttons/botao_curtir.png"
+                alt="like button"
+              />
+            </button>
+          </div>
+        </li>
+      </template>
+      <footer class="footer">
+        <h2 class="footer__text">© 2021 Around The U.S.</h2>
+      </footer>
+    </div>
+    <script src="/pages/index.js"></script>
+    <script src="/pages/validate.js"></script>
+  </body>
 </html>

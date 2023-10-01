@@ -74,29 +74,31 @@ const initialCards = [
 ];
 
 // FUNÇÃO FECHAR COM ESC
-const escClick = function(event) {
+const escClick = function (event) {
   if (event.key === "Escape") {
-  modalProfile.classList.remove("popup_opened");
-  modalPlace.classList.remove("popup_opened");
-  modalPictureBig.classList.remove("popup_opened");
-  opacity.classList.remove("fade_on");
-  document.removeEventListener("keydown", escClick);
-  }};
+    modalProfile.classList.remove("popup_opened");
+    modalPlace.classList.remove("popup_opened");
+    modalPictureBig.classList.remove("popup_opened");
+    opacity.classList.remove("fade_on");
+    document.removeEventListener("keydown", escClick);
+  }
+};
 
 // FUNÇÃO NÃO FECHAR COM ENTER
-const enterClick = function(event) {
-  if (event.key === "Enter") {    
+const enterClick = function (event) {
+  if (event.key === "Enter") {
     event.preventDefault();
     console.log("funcemina");
-}};
+  }
+};
 
 //FUNÇÃO FECHAR POPUPS
-const closePopup = function() {
+const closePopup = function () {
   modalProfile.classList.remove("popup_opened");
   modalPlace.classList.remove("popup_opened");
   modalPictureBig.classList.remove("popup_opened");
   opacity.classList.remove("fade_on");
-}
+};
 
 //FUNÇÃO DOS CARDS ORIGINAIS - NAO MEXER
 function createCards() {
@@ -123,24 +125,28 @@ createCards();
 editButton.addEventListener("click", function () {
   modalProfile.classList.add("popup_opened");
   opacity.classList.add("fade_on");
-})
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
+});
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
     modalProfile.classList.remove("popup_opened");
     opacity.classList.remove("fade_on");
-    }
-    if (event.key === "Enter") {    
-      event.preventDefault();
-    }
-  })
-  document.addEventListener("mousedown", (event) => {
-    if ((!modalProfile.contains(event.target)) && (!modalPlace.contains(event.target)) && (!modalPictureBig.contains(event.target))) {
-      modalProfile.classList.remove("popup_opened");
-      opacity.classList.remove("fade_on");
-      console.log("ok", event.target);
-    }
-    document.removeEventListener("mousedown", (event))
-  });
+  }
+  if (event.key === "Enter") {
+    event.preventDefault();
+  }
+});
+document.addEventListener("mousedown", (event) => {
+  if (
+    !modalProfile.contains(event.target) &&
+    !modalPlace.contains(event.target) &&
+    !modalPictureBig.contains(event.target)
+  ) {
+    modalProfile.classList.remove("popup_opened");
+    opacity.classList.remove("fade_on");
+    console.log("ok", event.target);
+  }
+  document.removeEventListener("mousedown", event);
+});
 
 //BOTAO ABRIR POPUP PLACES  E FECHAR CLICANDO ESC
 addButton.addEventListener("click", function () {
@@ -148,31 +154,28 @@ addButton.addEventListener("click", function () {
   opacity.classList.add("fade_on");
   createButton.disabled = true;
   createButton.classList.add("popup__button-create-disabled");
-})
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-      modalPlace.classList.remove("popup_opened");
-      opacity.classList.remove("fade_on");
-      }
-      if (event.key === "Enter") {    
-        event.preventDefault();
-      }
-    })
-  //document.addEventListener("mousedown", (event) => {
-  //  if (!modalPlace.contains(event.target)) {
-  //    modalProfile.classList.remove("popup_opened");
-  //    modalPlace.classList.remove("popup_opened");
-  //    modalPictureBig.classList.remove("popup_opened");
-  //    opacity.classList.remove("fade_on");
-  //  }})
-  document.addEventListener("mousedown", (event) => {
-    if ((!modalPlace.contains(event.target)) && (!modalProfile.contains(event.target)) && (!modalPictureBig.contains(event.target))) {
-      modalPlace.classList.remove("popup_opened");
-      opacity.classList.remove("fade_on");
-      console.log("ok", event.target);
-    }
-    document.removeEventListener("mousedown", (event))
-  });
+});
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    modalPlace.classList.remove("popup_opened");
+    opacity.classList.remove("fade_on");
+  }
+  if (event.key === "Enter") {
+    event.preventDefault();
+  }
+});
+document.addEventListener("mousedown", (event) => {
+  if (
+    !modalPlace.contains(event.target) &&
+    !modalProfile.contains(event.target) &&
+    !modalPictureBig.contains(event.target)
+  ) {
+    modalPlace.classList.remove("popup_opened");
+    opacity.classList.remove("fade_on");
+    console.log("ok", event.target);
+  }
+  document.removeEventListener("mousedown", event);
+});
 
 //BOTAO ABRIR IMAGEM E FECHAR CLICANDO ESC
 elements.addEventListener("click", (event) => {
@@ -186,20 +189,25 @@ elements.addEventListener("click", (event) => {
     imageBigger.src = bigPicture.src;
     imageBigger.alt = bigPicture.alt;
 
-    document.addEventListener("keydown", function(event) {
+    document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
-      modalPictureBig.classList.remove("popup_opened");
-      opacity.classList.remove("fade_on");
-  }}
-)}})
-    document.addEventListener("mousedown", (event) => {
-      if ((!modalPlace.contains(event.target)) && (!modalProfile.contains(event.target)) && (!modalPictureBig.contains(event.target))) {
         modalPictureBig.classList.remove("popup_opened");
         opacity.classList.remove("fade_on");
-        console.log("ok", event.target);
       }
-      document.removeEventListener("mousedown", (event))
-
+    });
+  }
+});
+document.addEventListener("mousedown", (event) => {
+  if (
+    !modalPlace.contains(event.target) &&
+    !modalProfile.contains(event.target) &&
+    !modalPictureBig.contains(event.target)
+  ) {
+    modalPictureBig.classList.remove("popup_opened");
+    opacity.classList.remove("fade_on");
+    console.log("ok", event.target);
+  }
+  document.removeEventListener("mousedown", event);
 });
 
 //BOTAO FECHAR POPUP PERFIL
@@ -237,7 +245,7 @@ function newCard() {
   elements.prepend(cardList);
 }
 
-//BOTAO CRIAR POPUP PLACES (SAVE INFO) - RETIFICAR PORQUE BOTAO CLOSE TAMBEM CRIA CARD?!
+//BOTAO CRIAR POPUP PLACES (SAVE INFO)
 modalPlace.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -247,43 +255,45 @@ modalPlace.addEventListener("submit", (event) => {
 
 //BOTAO CRIAR POPUP PLACES (CLOSE)
 createButton.addEventListener("click", function (closePopup) {
-
   const tempCard = {
     name: subtitleInputPlaces.value,
     link: linkInputPlaces.value,
   };
-  
+
   newCard(tempCard);
 });
 
 //TECLA ENTER CRIA NOVO CARD
 modalPlace.addEventListener("keydown", (event) => {
-  if(event.keyCode === 13 && subtitleInputPlaces.validity.valid && linkInputPlaces.validity.valid) { 
-
+  if (
+    event.keyCode === 13 &&
+    subtitleInputPlaces.validity.valid &&
+    linkInputPlaces.validity.valid
+  ) {
     const tempCard = {
       name: subtitleInputPlaces.value,
       link: linkInputPlaces.value,
     };
-    
+
     newCard(tempCard);
-  
+
     event.preventDefault();
 
-  subtitleInputPlaces.value = "";
-  linkInputPlaces.value = "";
+    subtitleInputPlaces.value = "";
+    linkInputPlaces.value = "";
 
-  modalPlace.classList.remove("popup_opened");
-  opacity.classList.remove("fade_on");
-}});
+    modalPlace.classList.remove("popup_opened");
+    opacity.classList.remove("fade_on");
+  }
+});
 
 //BOTAO CRIAR POPUP PLACES (CLOSE)
 createButton.addEventListener("click", function (closePopup) {
-
   const tempCard = {
     name: subtitleInputPlaces.value,
     link: linkInputPlaces.value,
   };
-  
+
   newCard(tempCard);
 });
 
