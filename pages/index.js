@@ -80,18 +80,22 @@ const escClick = function(event) {
   modalPlace.classList.remove("popup_opened");
   modalPictureBig.classList.remove("popup_opened");
   opacity.classList.remove("fade_on");
-  console.log("fechou?2");
   document.removeEventListener("keydown", escClick);
   }};
 
 // FUNÇÃO NÃO FECHAR COM ENTER
-
 const enterClick = function(event) {
-  if(event.keyCode === 13) {
-            
-    e.preventDefault();
-      
+  if(event.keyCode === 13) {    
+    event.preventDefault();
 }};
+
+//FUNÇÃO FECHAR POPUPS
+const closePopup = function() {
+  modalProfile.classList.remove("popup_opened");
+  modalPlace.classList.remove("popup_opened");
+  modalPictureBig.classList.remove("popup_opened");
+  opacity.classList.remove("fade_on");
+}
 
 //FUNÇÃO DOS CARDS ORIGINAIS - NAO MEXER
 function createCards() {
@@ -124,7 +128,8 @@ editButton.addEventListener("click", function () {
     if (!modalProfile.contains(event.target)) {
       modalProfile.classList.remove("popup_opened");
       opacity.classList.remove("fade_on");
-    }});
+      console.log("OK");
+  }});
 
 //BOTAO ABRIR POPUP PLACES  E FECHAR CLICANDO ESC
 addButton.addEventListener("click", function () {
@@ -133,7 +138,6 @@ addButton.addEventListener("click", function () {
   createButton.disabled = true;
   createButton.classList.add("popup__button-create-disabled");
   document.addEventListener("keydown", escClick, enterClick);
-  //document.removeEventListener("keydown", escClick);
 });
   //});
   document.addEventListener("mousedown", (event) => {
@@ -163,22 +167,13 @@ elements.addEventListener("click", (event) => {
     }});
 
 //BOTAO FECHAR POPUP PERFIL
-closeButtonProfile.addEventListener("click", function () {
-  modalProfile.classList.remove("popup_opened");
-  opacity.classList.remove("fade_on");
-});
+closeButtonProfile.addEventListener("click", closePopup);
 
 //BOTAO FECHAR POPUP PLACES
-closeButtonPlace.addEventListener("click", function () {
-  modalPlace.classList.remove("popup_opened");
-  opacity.classList.remove("fade_on");
-});
+closeButtonPlace.addEventListener("click", closePopup);
 
 //BOTAO FECHAR POPUP IMAGEM GRANDE
-closeButtonPictureBig.addEventListener("click", function () {
-  modalPictureBig.classList.remove("popup_opened");
-  opacity.classList.remove("fade_on");
-});
+closeButtonPictureBig.addEventListener("click", closePopup);
 
 // BOTAO SALVAR POPUP PERFIL (SAVE INFO)
 modalProfile.addEventListener("submit", (event) => {
@@ -188,10 +183,7 @@ modalProfile.addEventListener("submit", (event) => {
 });
 
 //BOTAO SALVAR POPUP PERFIL (CLOSE)
-saveButton.addEventListener("click", function () {
-  modalProfile.classList.remove("popup_opened");
-  opacity.classList.remove("fade_on");
-});
+saveButton.addEventListener("click", closePopup);
 
 //FUNÇÃO DOS NOVOS CARDS
 function newCard() {
@@ -218,11 +210,39 @@ modalPlace.addEventListener("submit", (event) => {
 });
 
 //BOTAO CRIAR POPUP PLACES (CLOSE)
-createButton.addEventListener("click", function () {
+createButton.addEventListener("click", function (closePopup) {
+
+  const tempCard = {
+    name: subtitleInputPlaces.value,
+    link: linkInputPlaces.value,
+  };
+  
+  newCard(tempCard);
+});
+
+//TECLA ENTER CRIA NOVO CARD
+modalPlace.addEventListener("keydown", (event) => {
+  if(event.keyCode === 13 && subtitleInputPlaces.validity.valid && linkInputPlaces.validity.valid) { 
+
+    const tempCard = {
+      name: subtitleInputPlaces.value,
+      link: linkInputPlaces.value,
+    };
+    
+    newCard(tempCard);
+  
+    event.preventDefault();
+
+  subtitleInputPlaces.value = "";
+  linkInputPlaces.value = "";
+
   modalPlace.classList.remove("popup_opened");
   opacity.classList.remove("fade_on");
+}});
 
-  
+//BOTAO CRIAR POPUP PLACES (CLOSE)
+createButton.addEventListener("click", function (closePopup) {
+
   const tempCard = {
     name: subtitleInputPlaces.value,
     link: linkInputPlaces.value,
@@ -232,7 +252,6 @@ createButton.addEventListener("click", function () {
 });
 
 //BOTAO LIKE PLACES - NAO MEXER
-
 elements.addEventListener("click", (event) => {
   if (event.target.classList.contains("element__img-like-button")) {
     const button_like = event.target;

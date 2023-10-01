@@ -28,11 +28,15 @@ function enableValidation () {
 }
 
 function hideInputError(errorElement) {
+  const inputElement = event.target;
   errorElement.classList.remove("popup__error-active");
+  inputElement.classList.remove("popup__input-error");
 };
 
 function showInputError(errorElement, message) {
+  const inputElement = event.target;
   errorElement.classList.add("popup__error-active")
+  inputElement.classList.add("popup__input-error");
   errorElement.textContent = message;
   };
 
