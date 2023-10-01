@@ -12,6 +12,7 @@ function enableValidation () {
       if (nameInputProfile.validity.valid && aboutInputProfile.validity.valid) {
         saveButton.disabled = false;
         saveButton.classList.remove("popup__button-save-disabled");
+        
       } else {
           saveButton.disabled = true;
           saveButton.classList.add("popup__button-save-disabled");
